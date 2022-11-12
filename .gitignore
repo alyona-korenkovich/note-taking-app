@@ -1,0 +1,9 @@
+.env
+.DS_Store
+
+.idea/
+*.iml
+
+server/node_modules
+server/dist
+client/node_modules
