@@ -1,0 +1,20 @@
+:root {
+    --main-font-family: 'Inter', arial, sans-serif;
+    --regular-font-family: 'InterRegular', arial, sans-serif;
+    --semibold-font-family: 'InterSemiBold', arial, sans-serif;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('https://fonts.googleapis.com/css2?family=Inter&display=swap') format('truetype');
+}
+
+@font-face {
+    font-family: 'InterRegular';
+    src: url('https://fonts.googleapis.com/css2?family=Inter&display=swap') format('truetype');
+}
+
+@font-face {
+    font-family: 'InterSemiBold';
+    src: url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap') format('truetype');
+}
