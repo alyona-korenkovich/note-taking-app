@@ -1,0 +1,155 @@
+@mixin signup($padding, $outlineAndBorder: initial) {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: $padding;
+  outline: $outlineAndBorder;
+  border: $outlineAndBorder;
+
+  background: rgba(198, 168, 91, 0.85);
+  border-radius: 4px;
+}
+
+@mixin buttonLink() {
+  text-decoration: none;
+  color: var(--font-color);
+  font-family: var(--main-font-family);
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.4rem;
+}
+
+.container {
+  margin: 0 11.5rem;
+  padding: 2.5rem 3.75rem;
+  width: calc(100vw - 23rem);
+  height: 100vh;
+
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  gap: 10rem;
+
+  .navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0;
+    gap: 1rem;
+
+    a {
+      @include buttonLink();
+    }
+
+    &_signup {
+      @include signup(0.5rem 2rem);
+    }
+
+    &_login {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 0.5rem 4rem;
+      gap: 0.625rem;
+
+      border: 1px solid var(--gray-color);
+      border-radius: 4px;
+    }
+  }
+
+  main {
+    width: 45%;
+
+    h1 {
+      padding: 1.5rem 0;
+      font-weight: 600;
+      font-size: 2.25rem;
+      line-height: 2.75rem;
+    }
+
+    .description_wrapper {
+      padding: 0.25rem 1rem;
+      gap: 0.75rem;
+
+      border-left: 4px solid var(--accent-color);
+
+      h2 {
+        font-weight: 400;
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+      }
+    }
+
+    .signup_button {
+        @include signup(0.75rem 2.75rem, none);
+        @include buttonLink();
+        margin-top: 4rem;
+    }
+  }
+
+  .image {
+      position: absolute;
+      top: 10rem;
+      right: 10rem;
+
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+      max-width: 960px;
+      width: 50%;
+      height: auto;
+      z-index: -1;
+  }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
+  .container {
+    margin: 0 8rem;
+    width: calc(100vw - 16rem);
+
+    .image {
+      top: 12rem;
+      right: 4rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .container {
+    margin: 0 4rem;
+    width: calc(100vw - 8rem);
+
+    .image {
+      top: 12rem;
+      right: 4rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 660px) {
+  .container {
+    margin: 0 2rem;
+    width: 100vw;
+
+    .image {
+      top: 14rem;
+      right: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .container {
+    margin: 0;
+    width: 100vw;
+
+    main {
+      width: 100%;
+    }
+  }
+
+  .image {
+    display: none;
+  }
+}

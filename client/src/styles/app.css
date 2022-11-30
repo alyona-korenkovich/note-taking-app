@@ -1,0 +1,18 @@
+@import './fonts.css';
+@import './colors.css';
+@import './breakpoints.css';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--main-font-family);
+  font-size: 16px;
+  color: var(--font-color);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
