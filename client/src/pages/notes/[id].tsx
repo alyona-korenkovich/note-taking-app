@@ -1,11 +1,11 @@
-import {useRouter} from "next/router";
+import { useRouter } from 'next/router';
 
 export default function () {
-    const {query} = useRouter();
+  const { query } = useRouter();
 
-    return (
-        <div>
-            <h1>Заметка с id {query.id}</h1>
-        </div>
-    );
-};
+  return (
+    <div>
+      <h1>Заметка с id {query.id}</h1>
+    </div>
+  );
+}
