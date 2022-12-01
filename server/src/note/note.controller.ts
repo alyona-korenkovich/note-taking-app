@@ -6,6 +6,7 @@ import {
   Param,
   Post,
   Put,
+  Query,
   Req,
   UseGuards,
 } from '@nestjs/common';
@@ -34,6 +35,12 @@ export class NoteController {
   getNotes(@Req() req: any) {
     const user = req.user as UserDto;
     return this.noteService.getNotes(user);
+  }
+
+  @Get('/search')
+  @UseGuards(AuthGuard('jwt'))
+  search(@Query('query') query: string) {
+    return this.noteService.search(query);
   }
 
   @Get(':id')
