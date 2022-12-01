@@ -31,6 +31,14 @@ export class NoteService {
     return this.noteModel.findByIdAndUpdate(id, dto, { new: true });
   }
 
+  async pinNote(id: ObjectId) {
+    return this.noteModel.findByIdAndUpdate(
+      id,
+      { isPinned: true },
+      { new: true },
+    );
+  }
+
   async deleteNote(id: ObjectId) {
     return this.noteModel.findByIdAndDelete(id);
   }

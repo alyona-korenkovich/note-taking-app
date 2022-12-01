@@ -48,6 +48,12 @@ export class NoteController {
     return this.noteService.updateNote(id, updateNoteDto);
   }
 
+  @Put('/pin/:id')
+  @UseGuards(AuthGuard('jwt'))
+  pinNote(@Param('id') id: ObjectId) {
+    return this.noteService.pinNote(id);
+  }
+
   @Delete(':id')
   @UseGuards(AuthGuard('jwt'))
   deleteNote(@Param('id') id: ObjectId) {
