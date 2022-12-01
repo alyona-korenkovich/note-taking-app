@@ -20,6 +20,12 @@ export const useAuth = () => {
     );
   }, []);
 
+  const logout = () => {
+    setToken(null);
+    setUserId(null);
+    localStorage.removeItem(storageName);
+  };
+
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem(storageName));
     if (data && data.token) {
@@ -28,5 +34,5 @@ export const useAuth = () => {
     setReady(true);
   }, [login]);
 
-  return { login, token, userId, ready };
+  return { login, logout, token, userId, ready };
 };
