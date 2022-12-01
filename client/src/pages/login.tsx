@@ -59,7 +59,7 @@ const Login = () => {
         email: values.email,
         password: values.password,
       });
-      auth.login(data.token, data.userId);
+      auth.login(data.accessToken, data.id);
       actions.setSubmitting(false);
       await router.push('/notes');
     } catch (e) {}
