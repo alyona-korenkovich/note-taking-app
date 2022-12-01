@@ -1,4 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { UserDto } from '../../users/dto';
 
 export type NoteDocument = Note & Document;
 
@@ -15,6 +16,9 @@ export class Note {
 
   @Prop()
   dateCreated: Date;
+
+  @Prop()
+  owner: UserDto;
 }
 
 export const NoteSchema = SchemaFactory.createForClass(Note);
