@@ -36,7 +36,10 @@
   ],
   "rules": {
     "prettier/prettier": [
-      "error"
+      "error",
+        {
+          "endOfLine": "auto"
+        }
     ],
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off"
@@ -50,6 +53,7 @@
         "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
         "class-methods-use-this": "off",
         "react/require-default-props": "off",
+        "linebreak-style": ["error", "unix"],
         "sort-imports": [
           "error",
           {

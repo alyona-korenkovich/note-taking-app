@@ -10,7 +10,6 @@ import { User, UserDocument } from '../users/schemas/user.schema';
 
 import { ERROR_INCORRECT_FIELDS, ERROR_SIGNUP_USER } from '../const/errors';
 
-import { JWT_SECRET } from '../const/config';
 import { SALT } from '../const/config';
 
 export type TUserSignIn = {
@@ -88,7 +87,7 @@ export class AuthService {
         email,
       },
       {
-        secret: JWT_SECRET,
+        secret: process.env.JWT_SECRET,
       },
     );
     return { accessToken: token };
