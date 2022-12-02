@@ -72,7 +72,7 @@ const Signup = () => {
           email: values.email,
           password: values.password,
         });
-        auth.login(data.token, data.userId);
+        await auth.login(data.accessToken, data.id);
         await router.push('/notes');
       });
     } catch (e) {}
