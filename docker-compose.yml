@@ -1,0 +1,29 @@
+version: '1'
+
+services:
+  nta_database:
+    container_name: nta_mongo_db
+    image: mongo:latest
+    restart: always
+    ports:
+      - 27017:27017
+    env_file:
+      .env
+  nta_server:
+    container_name: nta_server
+    depends_on:
+      - nta_database
+    build:
+      context: ./server
+    env_file:
+      .env
+    ports:
+      - 5000:5000
+    restart: always
+  nta_client:
+    container_name: nta_client
+    restart: always
+    build:
+      context: ./client
+    ports:
+      - 3000:3000
