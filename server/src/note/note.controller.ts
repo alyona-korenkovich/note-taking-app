@@ -39,8 +39,9 @@ export class NoteController {
 
   @Get('/search')
   @UseGuards(AuthGuard('jwt'))
-  search(@Query('query') query: string) {
-    return this.noteService.search(query);
+  search(@Query('query') query: string, @Req() req: any) {
+    const user = req.user as UserDto;
+    return this.noteService.search(query, user);
   }
 
   @Get(':id')

@@ -27,9 +27,10 @@ export class NoteService {
     return this.noteModel.findById(id);
   }
 
-  async search(query: string): Promise<Note[]> {
+  async search(query: string, user: UserDto): Promise<Note[]> {
     return this.noteModel.find({
       title: { $regex: new RegExp(query, 'i') },
+      owner: user,
     });
   }
 
