@@ -1,0 +1,45 @@
+name: Backend CI
+
+on:
+  push:
+    branches: [develop, master]
+    paths:
+      - "server/**"
+  pull_request:
+    branches:
+      - "**"
+    paths:
+      - "server/**"
+  workflow_dispatch:
+
+jobs:
+  run-tests:
+    env:
+      DB_USERNAME: "cri_decoeur"
+      DB_PASSWORD: "NJEJPZG4btrVrR"
+      JWT_SECRET: "jwt-dev"
+    strategy:
+      matrix:
+        os: [ ubuntu-22.04, ubuntu-20.04 ]
+
+    runs-on: ${{ matrix.os }}
+
+    container: node:18
+
+    services:
+      mongodb:
+        image: mongo:latest
+        env:
+          DB_USERNAME: ${env:DB_USERNAME}
+          DB_PASSWORD: ${env:DB_PASSWORD}
+    steps:
+      - name: Checkout code to runner
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        working-directory: server
+        run: npm install
+
+      - name: Run tests
+        working-directory: server
+        run: npm run test
