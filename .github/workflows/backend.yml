@@ -1,0 +1,38 @@
+name: Backend CI
+
+on:
+  push:
+    branches: [develop, master]
+    paths:
+      - "server/**"
+  pull_request:
+    branches:
+      - "**"
+    paths:
+      - "server/**"
+
+jobs:
+  run-tests:
+    env:
+      DB_USERNAME: "cri_decoeur"
+      DB_PASSWORD: "NJEJPZG4btrVrR"
+      JWT_SECRET: "jwt-dev"
+
+    runs-on: ubuntu-latest
+    container: node:18
+
+    services:
+      mongodb:
+        image: mongodb
+        env:
+          DB_USERNAME: ${env:DB_USERNAME}
+          DB_PASSWORD: ${env:DB_PASSWORD}
+    steps:
+      - name: Checkout code to runner
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm run test
