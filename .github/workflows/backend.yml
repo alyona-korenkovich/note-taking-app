@@ -18,8 +18,12 @@ jobs:
       DB_USERNAME: "cri_decoeur"
       DB_PASSWORD: "NJEJPZG4btrVrR"
       JWT_SECRET: "jwt-dev"
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, windows-latest, macos-latest ]
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+
     container: node:18
 
     services:
