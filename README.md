@@ -11,6 +11,59 @@
 
 [**TRELLO LINK**](https://trello.com/b/cSzWcC6C)
 
+## Test results
+
+<table>
+  <tr>
+    <th></th>
+    <th>develop</th>
+    <th>master</th>
+  </tr>
+
+  <tr>
+    <td>
+      Backend
+    </td>
+    <td>
+      <a href="https://github.com/alyona-korenkovich/note-taking-app/actions/workflows/backend.yml?query=branch%3Adevelop">
+        <img 
+          src="https://github.com/alyona-korenkovich/note-taking-app/actions/workflows/backend.yml/badge.svg?branch=develop"
+          alt="backend-develop"
+        />
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/alyona-korenkovich/note-taking-app/actions/workflows/backend.yml?query=branch%3Amaster">
+        <img 
+          src="https://github.com/alyona-korenkovich/note-taking-app/actions/workflows/backend.yml/badge.svg?branch=master"
+          alt="backend-master"
+        />
+      </a>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Frontend
+    </td>
+    <td>
+      <a href="https://github.com/alyona-korenkovich/note-taking-app/actions/workflows/frontend.yml?query=branch%3Adevelop">
+        <img 
+          src="https://github.com/alyona-korenkovich/note-taking-app/actions/workflows/frontend.yml/badge.svg?branch=develop"
+          alt="frontend-develop"
+        />
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/alyona-korenkovich/note-taking-app/actions/workflows/frontend.yml?query=branch%3Amaster">
+        <img 
+          src="https://github.com/alyona-korenkovich/note-taking-app/actions/workflows/frontend.yml/badge.svg?branch=master"
+          alt="frontend-master"
+        />
+      </a>
+    </td>
+  </tr>
+</table>
 
 ## Running the app (Docker)
 
