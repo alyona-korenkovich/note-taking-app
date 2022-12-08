@@ -20,7 +20,7 @@ jobs:
       JWT_SECRET: "jwt-dev"
     strategy:
       matrix:
-        os: [ ubuntu-latest, windows-latest, macos-latest ]
+        os: [ ubuntu-22.04, ubuntu-20.04 ]
 
     runs-on: ${{ matrix.os }}
 
